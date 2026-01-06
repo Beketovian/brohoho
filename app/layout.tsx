@@ -18,9 +18,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-    title: "CLAVICULAR | Aesthetic Direction",
+    title: "LOOKSMAX ACADEMY | Elite Aesthetic Calibration",
     description:
-        "The architect of your identity. Miami-based aesthetic consulting.",
+        "The premier institution for aesthetic strategy and personal branding.",
 };
 
 export default function RootLayout({
