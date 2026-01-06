@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLAVICULAR | Aesthetic Direction</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. SETTINGS & RESET --- */
+        :root {
+            --bg: #F3F2EE; /* "Italian Plaster" - warmer, more expensive than white */
+            --bg-accent: #EBEAE6;
+            --text-main: #111111;
+            --text-muted: #595959;
+            --gold-accent: #A49878; /* Desaturated Champagne Gold */
+            --line-color: rgba(0,0,0,0.08);
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --container: 1400px; 
+            --ease: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-weight: 300;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; cursor: pointer; }
+        img { display: block; width: 100%; height: auto; }
+
+        /* --- 2. TYPOGRAPHY SYSTEM --- */
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; color: var(--text-main); }
+        
+        .display-text {
+            font-size: clamp(3.5rem, 8vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .section-header {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--text-main);
+        }
+
+        .eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- 3. UTILITIES & ANIMATION --- */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s var(--ease);
+        }
+        
+        .reveal-up.active { opacity: 1; transform: translateY(0); }
+
+        .btn-luxury {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--text-main);
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            transition: all 0.4s var(--ease);
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-main);
+        }
+
+        .btn-luxury:hover { background: var(--text-main); color: var(--bg); }
+
+        /* --- 4. NAVIGATION (FIXED) --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            
+            /* Glassmorphism Fix: Ensures text doesn't clash underneath */
+            background: rgba(243, 242, 238, 0.85); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            color: var(--text-main);
+        }
+
+        .nav-logo {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .nav-menu { display: flex; gap: 3rem; }
+        .nav-menu a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+        .nav-menu a:hover { color: var(--text-main); }
+        .nav-menu a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 1px; background: currentColor; transition: width 0.4s var(--ease);
+        }
+        .nav-menu a:hover::after { width: 100%; }
+
+        /* --- 5. HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            padding-top: 100px; /* Accounts for navbar */
+            position: relative;
+        }
+
+        .hero-text {
+            padding-right: 4rem;
+            z-index: 2;
+        }
+
+        .hero-title-wrap { overflow: hidden; }
+        
+        .hero-tags {
+            margin-top: 3rem;
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--line-color);
+            padding-top: 2rem;
+        }
+
+        .tag-item { display: flex; align-items: center; gap: 0.5rem; }
+
+        .hero-img-container {
+            position: relative;
+            height: 85vh;
+            overflow: hidden;
+            border-radius: 4px; 
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            transition: transform 2s var(--ease);
+            /* High-end B&W Filter */
+            filter: grayscale(100%) contrast(1.1) brightness(1.1); 
+        }
+
+        .hero-img-container:hover .hero-img {
+            transform: scale(1);
+            filter: grayscale(0%) contrast(1);
+        }
+
+        /* Floating Overlay Card */
+        .hero-float {
+            position: absolute;
+            bottom: 5%;
+            left: -10%;
+            background: rgba(255,255,255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            max-width: 300px;
+            z-index: 3;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        /* --- 6. TICKER TAPE --- */
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--text-main);
+            border-bottom: 1px solid var(--text-main);
+            background: var(--bg);
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 4rem;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* --- 7. RESUME / ARCHITECTURAL LAYOUT --- */
+        .resume-section { padding: 8rem 0; }
+        
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            border-top: 1px solid var(--line-color);
+            padding-top: 4rem;
+        }
+
+        .sticky-col {
+            position: sticky;
+            top: 150px;
+            height: fit-content;
+        }
+
+        .resume-entry {
+            margin-bottom: 5rem;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2rem;
+            align-items: baseline;
+            transition: opacity 0.3s ease;
+        }
+        
+        .resume-entry:hover { opacity: 0.7; }
+
+        .resume-date {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+        }
+
+        .resume-content h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .resume-content h4 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .resume-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+        }
+
+        /* --- 8. FOOTER --- */
+        footer {
+            padding: 6rem 0;
+            border-top: 1px solid var(--text-main);
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand h2 {
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        .contact-link {
+            font-size: 2rem;
+            font-family: var(--font-display);
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover { color: var(--gold-accent); border-color: var(--gold-accent); }
+
+        /* --- MOBILE --- */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; padding-top: 120px; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 3rem; }
+            .hero-tags { justify-content: center; flex-wrap: wrap; }
+            .resume-grid { grid-template-columns: 1fr; }
+            .sticky-col { position: relative; top: 0; margin-bottom: 3rem; }
+            .resume-entry { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-float { display: none; }
+            .nav-menu { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Braden Peters.</div>
+        <div class="nav-menu">
+            <a href="#about">The Methodology</a>
+            <a href="#experience">Curriculum Vitae</a>
+            <a href="#contact">Inquire</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero" id="about">
+            <div class="hero-text">
+                <span class="eyebrow reveal-up">Miami, FL</span>
+                <div class="hero-title-wrap">
+                    <h1 class="display-text reveal-up" style="transition-delay: 0.1s;">The Architect</h1>
+                </div>
+                <div class="hero-title-wrap">
+                    <h1 class="display-text reveal-up" style="font-style: italic; color: var(--text-muted); transition-delay: 0.2s;">of your</h1>
+                </div>
+                <div class="hero-title-wrap">
+                    <h1 class="display-text reveal-up" style="transition-delay: 0.3s;">Identity</h1>
+                </div>
+
+                <div class="hero-tags reveal-up" style="transition-delay: 0.5s;">
+                    <div class="tag-item">
+                        <span>✦</span> Aesthetic Calibration
+                    </div>
+                    <div class="tag-item">
+                        <span>✦</span> Status Strategy
+                    </div>
+                    <div class="tag-item">
+                        <span>✦</span> Looksmaxing
+                    </div>
+                </div>
+                
+                <div style="margin-top: 4rem;" class="reveal-up" style="transition-delay: 0.6s;">
+                    <a href="#contact" class="btn-luxury">Start Transformation</a>
+                </div>
+            </div>
+
+            <div class="hero-img-container reveal-up" style="transition-delay: 0.4s;">
+                <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.2885-19/486467173_3918756718366696_774277866248192013_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QHsozfDvnh_keLsV9opNGT2FZV3QgG0oxJFIN2FtR08-Q3jjFAqFMFXR48uGI8sKbpKI37iYygUoG5nu-ro1JKl&_nc_ohc=mkR2m1yimS4Q7kNvwHZt8xb&_nc_gid=6Wktp07RRDddrt6tu26cwQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afo7wWVmrgVdAFn4enquI8c3N3p5TN_I5y-S7WEyWG2YKw&oe=69627FEC&_nc_sid=7a9f4b" alt="Clavicular Aesthetic" class="hero-img">
+                
+                <div class="hero-float">
+                    <span class="eyebrow" style="color:var(--text-main);">Current Status</span>
+                    <h4 style="margin: 0.5rem 0; font-size: 1.2rem;">Accepting Select Clients</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+                        Waitlist is currently open for Q3 2025. DM "COACH" for expedited review.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">Clavicular Consulting</div>
+            <div class="ticker-item">Aesthetic Strategy</div>
+            <div class="ticker-item">Personal Branding</div>
+            <div class="ticker-item">Clavicular Consulting</div>
+            <div class="ticker-item">Aesthetic Strategy</div>
+            <div class="ticker-item">Personal Branding</div>
+        </div>
+    </div>
+
+    <section class="container resume-section" id="experience">
+        <div class="resume-grid">
+            
+            <div class="sticky-col reveal-up">
+                <span class="eyebrow">Professional History</span>
+                <h2 style="font-size: 3rem; line-height: 1.1; margin-top: 1rem;">Curriculum<br>Vitae.</h2>
+                <p style="margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+                    A track record of elevating personal brands and corporate identities through visual precision and psychological strategy.
+                </p>
+            </div>
+
+            <div class="resume-list">
+                
+                <article class="resume-entry reveal-up">
+                    <div class="resume-date">2023 — Present</div>
+                    <div class="resume-content">
+                        <h3>Clavicular.</h3>
+                        <h4>Founder & Principal Consultant</h4>
+                        <p>Orchestrating comprehensive aesthetic overhauls for high-net-worth individuals. Specializing in wardrobe curation, physical presence optimization, and social signaling strategies in the Miami market.</p>
+                    </div>
+                </article>
+
+                <article class="resume-entry reveal-up">
+                    <div class="resume-date">2021 — 2023</div>
+                    <div class="resume-content">
+                        <h3>Luxe Lifestyle Group</h3>
+                        <h4>Brand Manager</h4>
+                        <p>Directed visual identity for a portfolio of luxury hospitality brands. Managed a $200k quarterly budget for influencer partnerships and high-production editorial campaigns.</p>
+                    </div>
+                </article>
+
+                <article class="resume-entry reveal-up">
+                    <div class="resume-date">2019 — 2021</div>
+                    <div class="resume-content">
+                        <h3>Growth Media Inc.</h3>
+                        <h4>Digital Strategist</h4>
+                        <p>Leveraged data analytics to optimize user acquisition funnels. Mastered the intersection of algorithmic reach and human psychology.</p>
+                    </div>
+                </article>
+
+                <article class="resume-entry reveal-up" style="border-top: 1px solid var(--line-color); padding-top: 3rem;">
+                    <div class="resume-date">Education</div>
+                    <div class="resume-content">
+                        <h3>University of Florida</h3>
+                        <h4>B.S. Marketing & Consumer Psychology</h4>
+                        <p>Graduated 2019. Focus on Behavioral Economics.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="reveal-up">
+                    <span class="eyebrow">Contact</span>
+                    <div style="margin-top: 2rem;">
+                        <a href="mailto:braden@clavicular.com" class="contact-link">DM "COACH"</a>
+                    </div>
+                    <p style="margin-top: 2rem; color: var(--text-muted);">
+                        Miami, Florida<br>
+                        By Application Only
+                    </p>
+                </div>
+                
+                <div style="text-align: right; align-self: end;" class="reveal-up">
+                    <div class="footer-brand">
+                        <h2>CLAVICULAR.</h2>
+                    </div>
+                    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                        &copy; 2025 Braden Peters.<br>Designed with precision.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Reveal Animation on Scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
