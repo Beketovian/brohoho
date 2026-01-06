@@ -1,5 +1,6 @@
-import "./globals.css";
+import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
     subsets: ["latin"],
@@ -16,13 +17,17 @@ const manrope = Manrope({
     display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "CLAVICULAR | Aesthetic Direction",
     description:
         "The architect of your identity. Miami-based aesthetic consulting.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="en">
             <body className={`${cormorant.variable} ${manrope.variable}`}>

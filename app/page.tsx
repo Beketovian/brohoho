@@ -4,16 +4,17 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function Home() {
-    const observerRef = useRef(null);
+    // Define the type for the ref to satisfy TypeScript
+    const observerRef = useRef<IntersectionObserver | null>(null);
 
-    // Handle the Scroll Reveal Animation
+    // Handle Scroll Reveal Animation
     useEffect(() => {
         observerRef.current = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("active");
-                        observerRef.current.unobserve(entry.target);
+                        observerRef.current?.unobserve(entry.target);
                     }
                 });
             },
@@ -21,7 +22,7 @@ export default function Home() {
         );
 
         const elements = document.querySelectorAll(".reveal-up");
-        elements.forEach((el) => observerRef.current.observe(el));
+        elements.forEach((el) => observerRef.current?.observe(el));
 
         return () => {
             if (observerRef.current) observerRef.current.disconnect();
@@ -32,19 +33,23 @@ export default function Home() {
         <main>
             {/* NAV */}
             <nav>
-                <div
-                    className="nav-logo"
-                    style={{ fontFamily: "var(--font-sans)" }}
-                >
-                    Braden Peters.
-                </div>
-                <div
-                    className="nav-menu"
-                    style={{ fontFamily: "var(--font-sans)" }}
-                >
-                    <a href="#about">The Methodology</a>
-                    <a href="#experience">Curriculum Vitae</a>
-                    <a href="#contact">Inquire</a>
+                <div className="container">
+                    <div className="nav-inner">
+                        <div
+                            className="nav-logo"
+                            style={{ fontFamily: "var(--font-sans)" }}
+                        >
+                            Braden Peters.
+                        </div>
+                        <div
+                            className="nav-menu"
+                            style={{ fontFamily: "var(--font-sans)" }}
+                        >
+                            <a href="#about">The Methodology</a>
+                            <a href="#experience">Curriculum Vitae</a>
+                            <a href="#contact">Inquire</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
 
@@ -57,6 +62,7 @@ export default function Home() {
                     >
                         Miami, FL
                     </span>
+
                     <div className="hero-title-wrap">
                         <h1
                             className="display-text reveal-up"
@@ -132,8 +138,9 @@ export default function Home() {
                     <div className="hero-img-wrapper">
                         <Image
                             src="https://scontent-hou1-1.cdninstagram.com/v/t51.2885-19/486467173_3918756718366696_774277866248192013_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QHsozfDvnh_keLsV9opNGT2FZV3QgG0oxJFIN2FtR08-Q3jjFAqFMFXR48uGI8sKbpKI37iYygUoG5nu-ro1JKl&_nc_ohc=mkR2m1yimS4Q7kNvwHZt8xb&_nc_gid=6Wktp07RRDddrt6tu26cwQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afo7wWVmrgVdAFn4enquI8c3N3p5TN_I5y-S7WEyWG2YKw&oe=69627FEC&_nc_sid=7a9f4b"
-                            alt="Clavicular Aesthetic"
+                            alt="Braden Peters Clavicular"
                             fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             style={{ objectFit: "cover" }}
                             priority
                         />
