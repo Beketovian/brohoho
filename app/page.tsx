@@ -57,7 +57,11 @@ export default function Home() {
                             style={{ fontFamily: "var(--font-sans)" }}
                         >
                             <a href="#academy">The Institution</a>
+                            <a href="#programs">Programs</a>
+                            <a href="#how-it-works">How It Works</a>
                             <a href="#faculty">Directing Partners</a>
+                            <a href="#testimonials">Testimonials</a>
+                            <a href="#faq">FAQ</a>
                             <a href="#contact">Apply</a>
                         </div>
                     </div>
@@ -137,11 +141,11 @@ export default function Home() {
                         style={{ marginTop: "3rem", transitionDelay: "0.5s" }}
                     >
                         <a
-                            href="#faculty"
+                            href="#programs"
                             className="btn-luxury"
                             style={{ fontFamily: "var(--font-sans)" }}
                         >
-                            View Faculty
+                            Explore Programs
                         </a>
                     </div>
                 </div>
@@ -157,13 +161,15 @@ export default function Home() {
                     <div className="ticker-item">Physiognomy</div>
                     <div className="ticker-item">Status Signaling</div>
                     <div className="ticker-item">Style Theory</div>
+                    <div className="ticker-item">Facial Analysis</div>
+                    <div className="ticker-item">Wardrobe Calibration</div>
                     <div className="ticker-item">Looksmax Academy</div>
                     <div className="ticker-item">Physiognomy</div>
                     <div className="ticker-item">Status Signaling</div>
                 </div>
             </div>
 
-            {/* FACULTY SECTION (Dual Profiles) */}
+            {/* FACULTY SECTION — Intro / Directing Partners */}
             <section className="container faculty-section" id="faculty">
                 <div className="faculty-header reveal-up">
                     <span
@@ -192,7 +198,7 @@ export default function Home() {
                     <article className="instructor-card reveal-up">
                         <div className="instructor-img-wrapper">
                             <Image
-                                src="https://scontent-hou1-1.cdninstagram.com/v/t51.2885-19/486467173_3918756718366696_774277866248192013_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QHsozfDvnh_keLsV9opNGT2FZV3QgG0oxJFIN2FtR08-Q3jjFAqFMFXR48uGI8sKbpKI37iYygUoG5nu-ro1JKl&_nc_ohc=mkR2m1yimS4Q7kNvwHZt8xb&_nc_gid=6Wktp07RRDddrt6tu26cwQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afo7wWVmrgVdAFn4enquI8c3N3p5TN_I5y-S7WEyWG2YKw&oe=69627FEC&_nc_sid=7a9f4b"
+                                src="/clav.jpg"
                                 alt="Braden Peters"
                                 fill
                                 className="instructor-img"
@@ -211,7 +217,6 @@ export default function Home() {
                             "Clavicular" | Founder
                         </span>
 
-                        {/* SOCIALS */}
                         <div className="social-row">
                             <a
                                 href="https://www.instagram.com/clavicular0/?hl=en"
@@ -262,7 +267,7 @@ export default function Home() {
                     >
                         <div className="instructor-img-wrapper">
                             <Image
-                                src="https://scontent-hou1-1.cdninstagram.com/v/t51.2885-19/434408812_1469256884007487_1037682563705470748_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2QEXR-k_fYB9KzYB4d1Ri2IdSuADD7QJvTM8bTDEUpP3ZA4nxkFezlCPJKQIVun3NFaVWEnFzqvR1qLbkMMBlHen&_nc_ohc=39ypAPFR3x0Q7kNvwEwVDKb&_nc_gid=-Zuq0IGzhzjOZ3cfhmcDAQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfrTXBZlTSUnpR0EK27-MccnMu0y_fezvkkE6oK_wWAi3Q&oe=69629F91&_nc_sid=7a9f4b"
+                                src="/adi.jpg"
                                 alt="Adi Xovic"
                                 fill
                                 className="instructor-img"
@@ -281,7 +286,6 @@ export default function Home() {
                             Co-Director | Social Strategy
                         </span>
 
-                        {/* SOCIALS */}
                         <div className="social-row">
                             <a
                                 href="https://www.instagram.com/adixovic/?hl=en"
@@ -325,6 +329,212 @@ export default function Home() {
                         </div>
                     </article>
                 </div>
+            </section>
+
+            {/* PROGRAMS */}
+            <section className="container section-block" id="programs">
+                <div className="section-header reveal-up">
+                    <span className="section-label" style={{ fontFamily: "var(--font-sans)" }}>
+                        Curriculum
+                    </span>
+                    <h2 className="section-title" style={{ fontFamily: "var(--font-display)" }}>
+                        Core Programs.
+                    </h2>
+                </div>
+                <div className="programs-grid">
+                    <article className="program-card reveal-up">
+                        <span className="program-number" style={{ fontFamily: "var(--font-sans)" }}>01</span>
+                        <h3 className="program-name" style={{ fontFamily: "var(--font-display)" }}>Facial Structural Analysis</h3>
+                        <p className="program-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                            Evidence-based physiognomy and bone-structure assessment. Learn to identify harmony ratios, 
+                            strengths, and optimization levers—not trends. Personalized reports and actionable calibration.
+                        </p>
+                    </article>
+                    <article className="program-card reveal-up" style={{ transitionDelay: "0.1s" }}>
+                        <span className="program-number" style={{ fontFamily: "var(--font-sans)" }}>02</span>
+                        <h3 className="program-name" style={{ fontFamily: "var(--font-display)" }}>Wardrobe Calibration</h3>
+                        <p className="program-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                            Style as signal. Build a capsule that matches your structure, context, and goals. 
+                            Fit, color, and silhouette tailored to your analysis—no generic advice.
+                        </p>
+                    </article>
+                    <article className="program-card reveal-up" style={{ transitionDelay: "0.2s" }}>
+                        <span className="program-number" style={{ fontFamily: "var(--font-sans)" }}>03</span>
+                        <h3 className="program-name" style={{ fontFamily: "var(--font-display)" }}>Social Dynamics & Status</h3>
+                        <p className="program-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                            Environment curation, presence, and high-status signaling. Networking frameworks, 
+                            venue selection, and behavioral calibration for real-world outcomes.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            {/* HOW IT WORKS */}
+            <section className="container section-block section-alt" id="how-it-works">
+                <div className="section-header reveal-up">
+                    <span className="section-label" style={{ fontFamily: "var(--font-sans)" }}>
+                        Process
+                    </span>
+                    <h2 className="section-title" style={{ fontFamily: "var(--font-display)" }}>
+                        How It Works.
+                    </h2>
+                </div>
+                <div className="steps-list">
+                    <div className="step-item reveal-up">
+                        <span className="step-num" style={{ fontFamily: "var(--font-display)" }}>1</span>
+                        <div className="step-content">
+                            <h4 className="step-title" style={{ fontFamily: "var(--font-display)" }}>Application</h4>
+                            <p className="step-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                                Submit via the channel below. We review every application. No open enrollment—cohorts are small and by invitation.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="step-item reveal-up" style={{ transitionDelay: "0.1s" }}>
+                        <span className="step-num" style={{ fontFamily: "var(--font-display)" }}>2</span>
+                        <div className="step-content">
+                            <h4 className="step-title" style={{ fontFamily: "var(--font-display)" }}>Assessment</h4>
+                            <p className="step-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                                Initial call to align goals and expectations. We assess fit; you assess us. No obligation.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="step-item reveal-up" style={{ transitionDelay: "0.2s" }}>
+                        <span className="step-num" style={{ fontFamily: "var(--font-display)" }}>3</span>
+                        <div className="step-content">
+                            <h4 className="step-title" style={{ fontFamily: "var(--font-display)" }}>Program</h4>
+                            <p className="step-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                                Tailored curriculum: analysis, wardrobe, social. In-person sessions in Miami; remote components where applicable.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="step-item reveal-up" style={{ transitionDelay: "0.3s" }}>
+                        <span className="step-num" style={{ fontFamily: "var(--font-display)" }}>4</span>
+                        <div className="step-content">
+                            <h4 className="step-title" style={{ fontFamily: "var(--font-display)" }}>Ongoing</h4>
+                            <p className="step-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                                Alumni access, check-ins, and refinement. We treat this as a long-term calibration, not a one-off.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* TESTIMONIALS */}
+            <section className="container section-block" id="testimonials">
+                <div className="section-header reveal-up">
+                    <span className="section-label" style={{ fontFamily: "var(--font-sans)" }}>
+                        Outcomes
+                    </span>
+                    <h2 className="section-title" style={{ fontFamily: "var(--font-display)" }}>
+                        What Graduates Say.
+                    </h2>
+                </div>
+                <div className="testimonials-grid">
+                    <blockquote className="testimonial-card reveal-up">
+                        <p className="testimonial-text" style={{ fontFamily: "var(--font-sans)" }}>
+                            &ldquo;Finally something that isn&apos;t fluff. The facial analysis gave me a clear map—what to lean into, what to downplay. My wardrobe and social approach changed completely.&rdquo;
+                        </p>
+                        <footer className="testimonial-meta" style={{ fontFamily: "var(--font-sans)" }}>
+                            — M., Miami
+                        </footer>
+                    </blockquote>
+                    <blockquote className="testimonial-card reveal-up" style={{ transitionDelay: "0.1s" }}>
+                        <p className="testimonial-text" style={{ fontFamily: "var(--font-sans)" }}>
+                            &ldquo;I thought I had good style. The calibration session showed me the gap between what I liked and what actually worked for my structure. Night and day.&rdquo;
+                        </p>
+                        <footer className="testimonial-meta" style={{ fontFamily: "var(--font-sans)" }}>
+                            — J., New York
+                        </footer>
+                    </blockquote>
+                    <blockquote className="testimonial-card reveal-up" style={{ transitionDelay: "0.2s" }}>
+                        <p className="testimonial-text" style={{ fontFamily: "var(--font-sans)" }}>
+                            &ldquo;The social dynamics module alone was worth it. I&apos;m more intentional about where I show up and how I carry myself. Results speak.&rdquo;
+                        </p>
+                        <footer className="testimonial-meta" style={{ fontFamily: "var(--font-sans)" }}>
+                            — K., Los Angeles
+                        </footer>
+                    </blockquote>
+                </div>
+            </section>
+
+            {/* ENROLLMENT TIERS */}
+            <section className="container section-block section-alt" id="tiers">
+                <div className="section-header reveal-up">
+                    <span className="section-label" style={{ fontFamily: "var(--font-sans)" }}>
+                        Enrollment
+                    </span>
+                    <h2 className="section-title" style={{ fontFamily: "var(--font-display)" }}>
+                        Program Tiers.
+                    </h2>
+                </div>
+                <div className="tiers-grid">
+                    <article className="tier-card reveal-up">
+                        <h3 className="tier-name" style={{ fontFamily: "var(--font-display)" }}>Foundation</h3>
+                        <p className="tier-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                            Facial analysis + wardrobe fundamentals. Ideal for first-time calibration. Includes report and 2 in-person sessions.
+                        </p>
+                        <a href="#contact" className="btn-luxury btn-small" style={{ fontFamily: "var(--font-sans)" }}>Inquire</a>
+                    </article>
+                    <article className="tier-card tier-featured reveal-up" style={{ transitionDelay: "0.1s" }}>
+                        <span className="tier-badge" style={{ fontFamily: "var(--font-sans)" }}>Most Popular</span>
+                        <h3 className="tier-name" style={{ fontFamily: "var(--font-display)" }}>Intensive</h3>
+                        <p className="tier-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                            Full curriculum: analysis, wardrobe, social dynamics. 6 sessions + ongoing support. Our standard offering.
+                        </p>
+                        <a href="#contact" className="btn-luxury btn-small" style={{ fontFamily: "var(--font-sans)" }}>Inquire</a>
+                    </article>
+                    <article className="tier-card reveal-up" style={{ transitionDelay: "0.2s" }}>
+                        <h3 className="tier-name" style={{ fontFamily: "var(--font-display)" }}>Bespoke</h3>
+                        <p className="tier-desc" style={{ fontFamily: "var(--font-sans)" }}>
+                            Fully customized scope, timeline, and deliverables. For high-profile or multi-phase engagements.
+                        </p>
+                        <a href="#contact" className="btn-luxury btn-small" style={{ fontFamily: "var(--font-sans)" }}>Inquire</a>
+                    </article>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="container section-block" id="faq">
+                <div className="section-header reveal-up">
+                    <span className="section-label" style={{ fontFamily: "var(--font-sans)" }}>
+                        Common Questions
+                    </span>
+                    <h2 className="section-title" style={{ fontFamily: "var(--font-display)" }}>
+                        FAQ.
+                    </h2>
+                </div>
+                <dl className="faq-list">
+                    <div className="faq-item reveal-up">
+                        <dt className="faq-q" style={{ fontFamily: "var(--font-display)" }}>Who is this for?</dt>
+                        <dd className="faq-a" style={{ fontFamily: "var(--font-sans)" }}>
+                            Professionals and high-achievers who want to optimize their presentation—facial, sartorial, and social—with a strategic, no-nonsense approach. We don&apos;t do generic advice.
+                        </dd>
+                    </div>
+                    <div className="faq-item reveal-up" style={{ transitionDelay: "0.05s" }}>
+                        <dt className="faq-q" style={{ fontFamily: "var(--font-display)" }}>Is everything in person?</dt>
+                        <dd className="faq-a" style={{ fontFamily: "var(--font-sans)" }}>
+                            Core sessions are in-person at our Miami Design District space. We offer remote components for analysis review and follow-ups where it makes sense.
+                        </dd>
+                    </div>
+                    <div className="faq-item reveal-up" style={{ transitionDelay: "0.1s" }}>
+                        <dt className="faq-q" style={{ fontFamily: "var(--font-display)" }}>How long does the program take?</dt>
+                        <dd className="faq-a" style={{ fontFamily: "var(--font-sans)" }}>
+                            Foundation: typically 2–3 weeks. Intensive: 6–8 weeks with sessions spaced for integration. Bespoke is timeline-flexible.
+                        </dd>
+                    </div>
+                    <div className="faq-item reveal-up" style={{ transitionDelay: "0.15s" }}>
+                        <dt className="faq-q" style={{ fontFamily: "var(--font-display)" }}>Do you work with women?</dt>
+                        <dd className="faq-a" style={{ fontFamily: "var(--font-sans)" }}>
+                            Yes. Our methodology applies across gender—structure, color, silhouette, and social signaling are universal. Calibration is individualized.
+                        </dd>
+                    </div>
+                    <div className="faq-item reveal-up" style={{ transitionDelay: "0.2s" }}>
+                        <dt className="faq-q" style={{ fontFamily: "var(--font-display)" }}>What&apos;s the investment?</dt>
+                        <dd className="faq-a" style={{ fontFamily: "var(--font-sans)" }}>
+                            Pricing is tier-based and communicated after your application. We don&apos;t publish rates; we match scope to goals in the assessment call.
+                        </dd>
+                    </div>
+                </dl>
             </section>
 
             {/* FOOTER */}
